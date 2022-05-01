@@ -9,3 +9,10 @@ describe("test  para explorer service",()=>{
         expect(ExplorersNode[0].mission).toBe("node");       
     });
 });
+describe("test  para explorer service",()=>{
+    test("requerimiento 2 obteniendo la cantidad de explorers con node" ,()=>{
+        const ExplorersMount = ExplorerService.getAmountOfExplorersByMission(explorers,"node");
+        expect(ExplorersMount).toBe(10);
+    
+    });
+});
