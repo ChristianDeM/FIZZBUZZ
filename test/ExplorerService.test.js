@@ -6,6 +6,6 @@ describe("test  para explorer service",()=>{
         expect(ExplorersNode[0].name).toBe("Woopa1");
         expect(ExplorersNode[0].githubUsername).toBe("ajolonauta1");
         expect(ExplorersNode[0].score).toBe(1);
-        expect(ExplorersNode[0].mission).toBe("asdasda");       
+        expect(ExplorersNode[0].mission).toBe("node");       
     });
 });
