@@ -1,5 +1,5 @@
-const   ExplorerService = require("./../libs/services/ExplorerService")
-const   explorers = require("./exploreres.test.json")
+const   ExplorerService = require("./../libs/services/ExplorerService");
+const   explorers = require("./exploreres.test.json");
 describe("test  para explorer service",()=>{
     test("requerimiento 1 obtener lista de explores con node" ,()=>{
         const ExplorersNode = ExplorerService.filterBymission(explorers,"node");
