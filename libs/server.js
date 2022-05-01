@@ -9,15 +9,15 @@ app.get('/', (req, res)=>{
 })
 
 //metodos de http  GET POST  PUT  DELATE
-app.get('/v1/explorers', (req,res)=>{
-    console.log(`GET explorers  api v1 ${new Date()}`)
-    const explorer1 ={ id:1,Name:"explorer1"}
-    const explorer2 ={ id:1,Name:"explorer2"}
-    const explorers=[explorer1,explorer2]
+app.get('/v1/explorers/:missions', (req,res)=>{
+    const mission = req.params.mission;
+    const explorersInMission = ExplorerController.getExplorersByMission(mission)
     //HTTP ESTATUS:200 TODO VA BIEN
-    res.status(200).json(explorers)
+    res.json(explorersInMission)
 
 })
+
+
 app.listen(port,()=>{
     console.log("server listo calisto¡");
 })
