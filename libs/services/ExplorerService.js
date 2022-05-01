@@ -1,5 +1,5 @@
 const Reader= require("./../utils/Reader")
-const explorer=Reader.readJsonFile("../../explorers.json")
+const explorers=Reader.readJsonFile("../../explorers.json")
 //console.log(explorer);
 
 class ExplorerService{
@@ -18,6 +18,7 @@ class ExplorerService{
         return usernamesInNode;
     }
 }
+
 
 
 
