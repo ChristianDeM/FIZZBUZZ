@@ -16,3 +16,11 @@ describe("test  para explorer service",()=>{
     
     });
 });
+
+describe("test  para explorer service",()=>{
+    test("requerimiento 3 obteniendo GithubbUsernames que tengan node" ,()=>{
+        const Explorersgithubname = ExplorerService.getExplorersUsernamesByMission(explorers,"node");
+        expect(Explorersgithubname[0]).toBe("ajolonauta1");
+    
+    });
+});
