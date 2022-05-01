@@ -10,6 +10,11 @@ class ExplorerController{
         ExplorerService.filterBymission(mission)
         return mission
     }
+    static getExplorersAmonutByMission(mission){
+        mission =Reader.readJsonFile("explorers.json")
+        const res =ExplorerService.getAmountOfExplorersByMission(mission);
+        return mission.length
+    }
 }
 
 module.exports = ExplorerController
