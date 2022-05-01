@@ -12,7 +12,7 @@ describe("test  para explorer service",()=>{
 describe("test  para explorer service",()=>{
     test("requerimiento 2 obteniendo la cantidad de explorers con node" ,()=>{
         const ExplorersMount = ExplorerService.getAmountOfExplorersByMission(explorers,"node");
-        expect(ExplorersMount).toBe(58);
+        expect(ExplorersMount).toBe(10);
     
     });
 });
