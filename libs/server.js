@@ -1,38 +1,38 @@
 const ExplorerController = require("./controller/ExplorerController");
-const express = require('express')
-const app = express()
-app.use(express.json())
-const port = 3000 // puerto para el server
+const express = require("express");
+const app = express();
+app.use(express.json());
+const port = 3000; // puerto para el server
 
-app.get('/', (req, res)=>{
-    res.send("hola a todos ")
-})
+app.get("/", (req, res)=>{
+    res.send("hola a todos ");
+});
 
 //metodos de http  GET POST  PUT  DELATE
-app.get('/v1/explorers/:mission', (request,response)=>{
+app.get("/v1/explorers/:mission", (request,response)=>{
     const mission = request.params.mission;
    
-    const explorersInMission = ExplorerController.getExplorersByMission(mission)
+    const explorersInMission = ExplorerController.getExplorersByMission(mission);
     //HTTP ESTATUS:200 TODO VA BIEN
-    response.json(explorersInMission)
+    response.json(explorersInMission);
 
-})
+});
 
-app.get('/v1/explorers/amount/:mission', (request,response)=>{
+app.get("/v1/explorers/amount/:mission", (request,response)=>{
     const mission = request.params.mission;
-    const explorersAmountInMission = ExplorerController.getExplorersAmonutByMission(mission)
+    const explorersAmountInMission = ExplorerController.getExplorersAmonutByMission(mission);
     //HTTP ESTATUS:200 TODO VA BIEN
-    response.json({mission: request.params.mission, quantity: explorersAmountInMission})
+    response.json({mission: request.params.mission, quantity: explorersAmountInMission});
 
-})
-app.get('/v1/explorers/usernames/:mission', (request,response)=>{
+});
+app.get("/v1/explorers/usernames/:mission", (request,response)=>{
     const mission = request.params.mission;
-    const getExplorersUsernamesByMission = ExplorerController.getExplorersUsernamesByMission(mission)
+    const getExplorersUsernamesByMission = ExplorerController.getExplorersUsernamesByMission(mission);
     //HTTP ESTATUS:200 TODO VA BIEN
-    response.json({mission: request.params.mission, explorers: getExplorersUsernamesByMission})
+    response.json({mission: request.params.mission, explorers: getExplorersUsernamesByMission});
 
-})
+});
 
 app.listen(port,()=>{
     console.log("server listo calisto¡");
-})
+});

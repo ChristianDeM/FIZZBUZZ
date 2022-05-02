@@ -1,6 +1,6 @@
 class ExplorerService{
     static filterBymission(explorers,mission){
-        this.mission=mission
+        this.mission=mission;
         const explorersByMission = explorers.filter((explorer) => explorer.mission === mission);
         return explorersByMission;
     }
