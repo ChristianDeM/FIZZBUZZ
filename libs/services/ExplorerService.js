@@ -10,8 +10,8 @@ class ExplorerService{
         return explorersInNode.length;
     }
 
-    static getExplorersUsernamesByMission(explorers){
-        const explorersInNodeToGetUsernames = explorers.filter((explorer) => explorer.mission == "node");
+    static getExplorersUsernamesByMission(explorers,mission){
+        const explorersInNodeToGetUsernames = explorers.filter((explorer) => explorer.mission == mission);
         const usernamesInNode = explorersInNodeToGetUsernames.map((explorer) => explorer.githubUsername);
         return usernamesInNode;
     }

@@ -25,6 +25,13 @@ app.get('/v1/explorers/amount/:mission', (request,response)=>{
     response.json({mission: request.params.mission, quantity: explorersAmountInMission})
 
 })
+app.get('/v1/explorers/usernames/:mission', (request,response)=>{
+    const mission = request.params.mission;
+    const getExplorersUsernamesByMission = ExplorerController.getExplorersUsernamesByMission(mission)
+    //HTTP ESTATUS:200 TODO VA BIEN
+    response.json({mission: request.params.mission, explorers: getExplorersUsernamesByMission})
+
+})
 
 app.listen(port,()=>{
     console.log("server listo calisto¡");
