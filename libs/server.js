@@ -9,14 +9,22 @@ app.get('/', (req, res)=>{
 })
 
 //metodos de http  GET POST  PUT  DELATE
-app.get('/v1/explorers/:missions', (req,res)=>{
-    const mission = req.params.mission;
+app.get('/v1/explorers/:mission', (request,response)=>{
+    const mission = request.params.mission;
+   
     const explorersInMission = ExplorerController.getExplorersByMission(mission)
     //HTTP ESTATUS:200 TODO VA BIEN
     res.json(explorersInMission)
 
 })
 
+app.get('/v1/explorers/amount/:mission', (req,res)=>{
+    const mission = req.params.mission;
+    const explorersAmountInMission = ExplorerController.explorersAmountInMission(mission)
+    //HTTP ESTATUS:200 TODO VA BIEN
+    res.json({mission: request.params.mission, quantity: explorersAmountInMission})
+
+})
 
 app.listen(port,()=>{
     console.log("server listo calisto¡");
