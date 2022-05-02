@@ -12,6 +12,7 @@ describe("test  para explorerController service",()=>{
 
 describe("test  para explorerController service",()=>{
     test("requerimiento 2 obtener la cantidad de explorers" ,()=>{
+        const mission="node"
         const ExplorersMount = ExplorerController.getExplorersAmonutByMission();
         console.log(ExplorersMount);
         expect(ExplorersMount).toBe(10); 

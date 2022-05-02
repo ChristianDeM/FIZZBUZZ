@@ -14,7 +14,7 @@ app.get('/v1/explorers/:mission', (request,response)=>{
    
     const explorersInMission = ExplorerController.getExplorersByMission(mission)
     //HTTP ESTATUS:200 TODO VA BIEN
-    res.json(explorersInMission)
+    response.json(explorersInMission)
 
 })
 

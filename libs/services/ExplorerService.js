@@ -1,11 +1,12 @@
 class ExplorerService{
     static filterBymission(explorers,mission){
+        this.mission=mission
         const explorersByMission = explorers.filter((explorer) => explorer.mission === mission);
         return explorersByMission;
     }
 
-    static getAmountOfExplorersByMission(explorers){
-        const explorersInNode = explorers.filter((explorer) => explorer.mission == "node");
+    static getAmountOfExplorersByMission(explorers,mission){
+        const explorersInNode = explorers.filter((explorer) => explorer.mission == mission);
         return explorersInNode.length;
     }
 

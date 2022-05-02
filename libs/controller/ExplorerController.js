@@ -6,13 +6,15 @@ const res = require("express/lib/response");
 
 class ExplorerController{
     static getExplorersByMission(mission){
+        this.mission=mission
         const  explorer=Reader.readJsonFile("explorers.json")
-        mission = ExplorerService.filterBymission(explorer,"node")
-        return mission
+        const res = ExplorerService.filterBymission(explorer,mission)
+        return res
     }
     static getExplorersAmonutByMission(mission){  
+           this.mission=mission
              const  explorer=Reader.readJsonFile("explorers.json")             
-             const cat =ExplorerService.getAmountOfExplorersByMission(explorer);
+             const cat =ExplorerService.getAmountOfExplorersByMission(explorer,mission);
             return cat
     }
 }
