@@ -12,10 +12,10 @@ class ExplorerController{
         return res
     }
     static getExplorersAmonutByMission(mission){  
-           this.mission=mission
+            this.mission=mission
              const  explorer=Reader.readJsonFile("explorers.json")             
-             const cat =ExplorerService.getAmountOfExplorersByMission(explorer,mission);
-            return cat
+             const res =ExplorerService.getAmountOfExplorersByMission(explorer,mission);
+            return res
     }
 }
 

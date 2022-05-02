@@ -18,11 +18,11 @@ app.get('/v1/explorers/:mission', (request,response)=>{
 
 })
 
-app.get('/v1/explorers/amount/:mission', (req,res)=>{
-    const mission = req.params.mission;
-    const explorersAmountInMission = ExplorerController.explorersAmountInMission(mission)
+app.get('/v1/explorers/amount/:mission', (request,response)=>{
+    const mission = request.params.mission;
+    const explorersAmountInMission = ExplorerController.getExplorersAmonutByMission(mission)
     //HTTP ESTATUS:200 TODO VA BIEN
-    res.json({mission: request.params.mission, quantity: explorersAmountInMission})
+    response.json({mission: request.params.mission, quantity: explorersAmountInMission})
 
 })
 
