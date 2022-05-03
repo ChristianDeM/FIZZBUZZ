@@ -1,5 +1,6 @@
 const ExplorerController = require("./controller/ExplorerController");
 const express = require("express");
+const FizzbuzzService = require("./services/FizzbuzzService");
 const app = express();
 app.use(express.json());
 const port = 3000;
@@ -26,6 +27,12 @@ app.get("/v1/explorers/usernames/:mission", (request,response)=>{
     const mission = request.params.mission;
     const getExplorersUsernamesByMission = ExplorerController.getExplorersUsernamesByMission(mission);
     response.json({mission: request.params.mission, explorers: getExplorersUsernamesByMission});
+
+});
+app.get("/v1/fizzbuzz/:number", (request,response)=>{
+    const number = request.params.number;
+    const getValidation = ExplorerController.validation(number);
+    response.json({score: request.params.number, trick: getValidation.trick});
 
 });
 
