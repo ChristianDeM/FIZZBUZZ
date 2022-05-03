@@ -20,7 +20,13 @@ class FizzbuzzService{
             return explorer;
 
         }
-            
-    }  
+         
+    } 
+    static applyValidationInNumber(explorer,number) {
+        this.number=number
+        explorer.score=number
+        const numberres= this.applyValidationInExplore(explorer)
+        return numberres
+    }   
 }
 module.exports =  FizzbuzzService;
